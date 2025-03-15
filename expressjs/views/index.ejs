@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confessions Site | Express JS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Confessions Site | Express JS</h1>
+        </div>
+        <div class="form">
+            <form method="POST" id="form">
+                <label for="confession">Confess Here: </label><br>
+                <textarea id="confession" name="confession" form="confessionform" placeholder="Write your confession.."></textarea>
+                <button type="submit">Confess</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+    const data = document.getElementById('confession').value;
+    console.log(data);
+    fetch("/confess", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ confession: data })
+    })
+    .catch(error => {
+        console.error("Error: ", error);
+    });
+});
+
+    </script>
+</body>
+</html>

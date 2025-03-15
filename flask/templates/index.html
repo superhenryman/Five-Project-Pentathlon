@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confesssions | Flask</title>
+</head>
+<body>
+    <form id="confessionform" action="/confess" method="POST">
+        <label for="confession">Confess Here: </label><br>
+        <textarea id="confession" name="confession" form="confessionform" placeholder="Write your confession.."></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@page
+@model ASP.NET_Confessions.Pages.IndexModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confessions Site | ASP.NET</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Confessions Site</h1>
+        <form id="confessionform" method="POST">
+            <label for="confession">Confess Here: </label><br>
+            <textarea id="confession" name="confession" form="confessionform" placeholder="Write your confession.." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+@if (!string.IsNullOrEmpty(Model.ResultMessage))
+{
+    <p style="color:green;">@Model.ResultMessage</p>
+}
